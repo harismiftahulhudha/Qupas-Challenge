@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.RecyclerView;
@@ -79,6 +80,14 @@ public class MoviesFragment extends Fragment implements MoviesView {
             presenter.showListSaved(savedInstanceState);
             Log.d("CHECKLOAD", "onViewCreated: b: " + page);
         }
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        BottomNavigationView navigationView = Objects.requireNonNull(getActivity()).findViewById(R.id.mainNavigation);
+        navigationView.getMenu().findItem(R.id.nav_movie).setChecked(true);
     }
 
     @Override
@@ -227,19 +236,19 @@ public class MoviesFragment extends Fragment implements MoviesView {
         recyclerView = view.findViewById(R.id.moviesRecyclerview);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
-        adapter = new MoviesAdapter(results, getActivity(), this);
-        recyclerView.setAdapter(adapter);
-        progressBar = view.findViewById(R.id.moviesProgress);
-        empty = view.findViewById(R.id.moviesEmpty);
-        presenter = new MoviesPresenter(getActivity(), this);
 
-        results.clear();
         page = 1;
         posType = 0;
         posYear = 0;
         search = "guardian";
         type = "";
         year = "";
+
+        adapter = new MoviesAdapter(results, getActivity(), this);
+        recyclerView.setAdapter(adapter);
+        progressBar = view.findViewById(R.id.moviesProgress);
+        empty = view.findViewById(R.id.moviesEmpty);
+        presenter = new MoviesPresenter(getActivity(), this);
     }
 
     @Override

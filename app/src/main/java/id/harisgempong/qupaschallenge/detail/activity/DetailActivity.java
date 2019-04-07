@@ -124,9 +124,9 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         detailRelease.setText(data.getRelease());
 
         result = new Result(
-                data.getTitle(),
-                data.getYear(),
                 data.getId(),
+                data.getYear(),
+                data.getTitle(),
                 data.getType(),
                 data.getImage()
         );

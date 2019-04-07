@@ -3,6 +3,7 @@ package id.harisgempong.qupaschallenge.main.fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import id.harisgempong.qupaschallenge.R;
 import id.harisgempong.qupaschallenge.main.adapter.MoviesAdapter;
@@ -55,6 +57,14 @@ public class FavoriteFragment extends Fragment implements MoviesView {
         initComponents(view);
 
         presenter.showListFavoriteMovies();
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        BottomNavigationView navigationView = Objects.requireNonNull(getActivity()).findViewById(R.id.mainNavigation);
+        navigationView.getMenu().findItem(R.id.nav_favorite).setChecked(true);
     }
 
     private void initComponents(View view) {
