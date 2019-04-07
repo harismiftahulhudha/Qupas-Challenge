@@ -21,6 +21,7 @@ Dalam challenge ini saya menggunakan architecture MVP (Model, View, Presenter) u
 ## Fitur Tambahan
 * Menyimpan data menggunakan SQLite
 * Tambahan halaman favorite
+* Fitur live search pada halaman favorite berdasarkan data yang sudah tampil (bukan dari query). hal ini saya bedakan dengan halaman movie yang pencariannya dengan cara memanggil API lagi
 
 ## Screenshot
 Berikut adalah screenshot challenge ini.
