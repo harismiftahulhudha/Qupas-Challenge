@@ -24,7 +24,6 @@ Dalam challenge ini saya menggunakan architecture MVP (Model, View, Presenter) u
 * Fitur live search pada halaman favorite berdasarkan data yang sudah tampil (bukan dari query). hal ini saya bedakan dengan halaman movie yang pencariannya dengan cara memanggil API lagi
 
 ## Screenshot
-Berikut adalah screenshot challenge ini.
 <img src="https://github.com/harismiftahulhudha/Qupas-Challenge/blob/master/app/src/main/res/drawable/1.png" alt="drawing" width="150"/> <img src="https://github.com/harismiftahulhudha/Qupas-Challenge/blob/master/app/src/main/res/drawable/2.png" alt="drawing" width="150"/>
 <img src="https://github.com/harismiftahulhudha/Qupas-Challenge/blob/master/app/src/main/res/drawable/3.png" alt="drawing" width="150"/>
 <img src="https://github.com/harismiftahulhudha/Qupas-Challenge/blob/master/app/src/main/res/drawable/4.png" alt="drawing" width="150"/>
